@@ -1,39 +1,33 @@
-import {
-  ChatBubbleOutline,
-  FavoriteBorder,
-  PublicOutlined,
-  Repeat,
-  VerifiedUserOutlined,
-} from "@mui/icons-material";
-import { Avatar } from "@mui/material";
 import React from "react";
 import "./Post.css";
+import { Avatar } from "@mui/material";
+import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
+import RepeatOutlinedIcon from "@mui/icons-material/RepeatOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import SignalCellularAltOutlinedIcon from "@mui/icons-material/SignalCellularAltOutlined";
+import IosShareOutlinedIcon from "@mui/icons-material/IosShareOutlined";
 
-export default function Post(displayName, username, text, avatar, image) {
+export default function Post(displayName, userName, avatar, content, image) {
   return (
     <div className="post">
       <div className="post-avatar">
         <Avatar src={avatar} />
       </div>
       <div className="post-body">
-        <div className="post-header">
-          <div className="post-headerText">
-            <h3>{displayName}</h3>
-            <span className="post-headerSpecial">
-              <VerifiedUserOutlined className="post-budge" />
-              {username}
-            </span>
-          </div>
-          <div className="header-description">
-            <p>{text}</p>
-          </div>
+        <div className="post-about-account">
+          <h3>{displayName}</h3>
+          <span className="userName">{userName}</span>
         </div>
-        <img src={image} alt="Any is OK" />
+        <div className="post-content">
+          <p>{content}</p>
+          <img src={image} alt="Any is OK." />
+        </div>
         <div className="post-footer">
-          <ChatBubbleOutline fontSize="small" />
-          <Repeat fontSize="small" />
-          <FavoriteBorder fontSize="small" />
-          <PublicOutlined fontSize="small" />
+          <ChatBubbleOutlineOutlinedIcon />
+          <RepeatOutlinedIcon />
+          <FavoriteBorderOutlinedIcon />
+          <SignalCellularAltOutlinedIcon />
+          <IosShareOutlinedIcon />
         </div>
       </div>
     </div>
